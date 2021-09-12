@@ -1,0 +1,34 @@
+name: as
+on:
+  push:
+    paths-ignore:
+      - .editorconfig
+      - .gitattributes
+jobs:
+  release:
+    name: release chart
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: config git
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR@usrs.noreply.github.com"
+
+      - name: check context
+        run: |
+          echo "Helm: `which helm`"
+
+      - name: install helm
+        uses: azure/setup-helm@v1
+        with:
+          version: v3.6.0
+
+      - name: release chart
+        uses: helm/chart-releaser-action@v1.2.1
+        env:
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
