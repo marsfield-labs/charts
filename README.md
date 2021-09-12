@@ -8,4 +8,4 @@ Here is a list of charts available:
 
   Name  | Description
 --------|-----------------
-rtl-poc | rtl poc project
+rtl-poc | rtl poc project [![Chart Release](https://github.com/marsfield-labs/charts/actions/workflows/build-chart.yaml/badge.svg)](https://github.com/marsfield-labs/charts/actions/workflows/build-chart.yaml)

@@ -1,4 +1,4 @@
-name: as
+name: Chart Release
 on:
   push:
     paths-ignore:
