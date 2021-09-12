@@ -17,7 +17,7 @@ jobs:
       - name: config git
         run: |
           git config user.name "${GITHUB_ACTOR}"
-          git config user.email "${GITHUB_ACTOR@usrs.noreply.github.com"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
       - name: check context
         run: |
