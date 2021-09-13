@@ -11,4 +11,21 @@ entries:
     urls:
     - https://github.com/marsfield-labs/charts/releases/download/multi-k8s-0.1.2/multi-k8s-0.1.2.tgz
     version: 0.1.2
-generated: "2021-09-12T05:29:57.40995776Z"
+  rtl-poc:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-09-13T10:25:22.404393259Z"
+    description: helm chart to help experiment RTL implementation
+    digest: f45dea5b6427aeda663174066fe7720754421a88dcc6ec11cf9d88deee89019b
+    keywords:
+    - rtl
+    - eagleeye
+    maintainers:
+    - email: cg1101@gmail.com
+      name: cg1101
+    name: rtl-poc
+    type: application
+    urls:
+    - https://github.com/marsfield-labs/charts/releases/download/rtl-poc-0.1.0/rtl-poc-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-09-13T10:25:22.404399459Z"
