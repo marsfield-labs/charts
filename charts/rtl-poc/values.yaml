@@ -14,6 +14,13 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+# optional namespace for this one
+namespace:
+  # true to create a new namespace, otherwise use default
+  create: false
+  # name of namespace to create
+  name: rtl-poc
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
@@ -25,10 +32,12 @@ serviceAccount:
 
 podAnnotations: {}
 
-podSecurityContext: {}
+podSecurityContext:
+  {}
   # fsGroup: 2000
 
-securityContext: {}
+securityContext:
+  {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -43,7 +52,8 @@ service:
 ingress:
   enabled: false
   className: ""
-  annotations: {}
+  annotations:
+    {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
@@ -56,7 +66,8 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources: {}
+resources:
+  {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -80,3 +91,14 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+rtl:
+  EES_AUTH_CLIENT_ID: client_id_place_holder
+  EES_AUTH_CLIENT_SECRET: client_secret_place_holder
+  EES_API_PREFIX: "/2.0"
+  EES_POS_API_HOST: place_holder_of_pos_api_host
+  EES_WALLET_API_HOST: place_holder_of_wallet_api_host
+  EES_RESOURCES_API_HOST: place_holder_of_resources_api_host
+
+server:
+  image: place_holer_for_image

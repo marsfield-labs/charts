@@ -60,3 +60,15 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Create namespace of installation target
+
+*/}}
+{{- define "rtl-poc.targetNamespace" -}}
+{{- if .Values.namespace.create -}}
+namespace: {{ .Values.namespace.name }}
+{{- else -}}
+namespace: default
+{{- end -}}
+{{- end }}
