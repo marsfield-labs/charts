@@ -23,3 +23,5 @@ helm repo add marsfield-labs https://marsfield-labs.github.io/charts/
 
 * [Helm](https://helm.sh)
 * [Release chart using github action](https://helm.sh/docs/howto/chart_releaser_action/)
+* [Helm Installer](https://github.com/marketplace/actions/helm-tool-installer)
+* [Helm Releaser](https://github.com/marketplace/actions/helm-chart-releaser)

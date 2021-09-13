@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deployment
+  {{- include "rtl-poc.targetNamespace" . | nindent 2 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: server
+  template:
+    metadata:
+      labels:
+        component: server
+    spec:
+      containers:
+        - name: server
+          image: {{ .Values.server.image }}
+          ports:
+            - containerPort: 8000
+          env:
+            - name: REDIS_HOST
+              value: redis-cluster-ip-service
+            - name: REDIS_PORT
+              value: '6379'
+            - name: FLASK_APP
+              value: rtl_poc
+            - name: FLASK_ENV
+              value: production
+            - name: EES_AUTH_CLIENT_ID
+              value: {{ .Values.rtl.EES_AUTH_CLIENT_ID }}
+            - name: EES_AUTH_CLIENT_SECRET
+              value: {{ .Values.rtl.EES_AUTH_CLIENT_SECRET }}
+            - name: EES_API_PREFIX
+              value: {{ .Values.rtl.EES_API_PREFIX }}
+            - name: EES_POS_API_HOST
+              value: {{ .Values.rtl.EES_POS_API_HOST }}
+            - name: EES_WALLET_API_HOST
+              value: {{ .Values.rtl.EES_WALLET_API_HOST }}
+            - name: EES_RESOURCES_API_HOST
+              value: {{ .Values.rtl.EES_RESOURCES_API_HOST }}
+            # - name: PGPASSWORD
+            #   valueFrom:
+            #     secretKeyRef:
+            #       name: pgpassword
+            #       key: PGPASSWORD
