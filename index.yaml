@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  demo:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-09-13T12:02:06.694631207Z"
+    description: Simply deploy an echo server for testing purpose
+    digest: 83634a38a3fe86502548c4c38c6bb4b51d847e175cc3283f03da580fd3b271f2
+    name: demo
+    type: application
+    urls:
+    - https://github.com/marsfield-labs/charts/releases/download/demo-0.1.0/demo-0.1.0.tgz
+    version: 0.1.0
   multi-k8s:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -28,4 +39,4 @@ entries:
     urls:
     - https://github.com/marsfield-labs/charts/releases/download/rtl-poc-0.1.0/rtl-poc-0.1.0.tgz
     version: 0.1.0
-generated: "2021-09-13T10:25:22.404399459Z"
+generated: "2021-09-13T12:02:06.825819567Z"
