@@ -24,7 +24,7 @@ jobs:
           echo "Helm: `which helm`"
 
       - name: install helm
-        uses: azure/setup-helm@v3.0
+        uses: azure/setup-helm@v3.1
         with:
           version: v3.6.0
 
